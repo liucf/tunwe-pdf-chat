@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+    font-family: Urbanist, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+}
