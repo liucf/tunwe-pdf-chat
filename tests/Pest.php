@@ -2,6 +2,7 @@
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +15,8 @@ use Tests\TestCase;
 |
 */
 
-uses(TestCase::class, RefreshDatabase::class)->in('Feature');
+uses(TestCase::class, DatabaseMigrations::class)->in('Feature');
+// uses(TestCase::class)->in('Feature');
 
 /*
 |--------------------------------------------------------------------------

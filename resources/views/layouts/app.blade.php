@@ -17,9 +17,20 @@
     @endisset
 </head>
 
-<body class="bg-white dark:bg-gray-900">
+<body class="bg-gray-100 dark:bg-gray-900">
 
-    <x-app-header />
+    {{-- <x-app-header /> --}}
+    <livewire:layout.navigation />
+
+
+    <!-- Page Heading -->
+    @if (isset($header))
+        <header class="bg-white dark:bg-gray-800 shadow">
+            <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                {{ $header }}
+            </div>
+        </header>
+    @endif
 
     <main class="space-y-40">
         {{ $slot }}
@@ -29,6 +40,7 @@
         <x-app-footer />
     @endif
 
+    <script src="/js/pdfobject.js"></script>
     @isset($scripts)
         {{ $scripts }}
     @endisset

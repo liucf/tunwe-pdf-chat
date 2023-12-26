@@ -4,7 +4,7 @@
             <div class="flex flex-wrap items-center justify-between py-2 gap-6 md:py-4 md:gap-0 relative">
                 <input aria-hidden="true" type="checkbox" name="toggle_nav" id="toggle_nav" class="hidden peer">
                 <div class="relative z-20 w-full flex justify-between lg:w-max md:px-0">
-                    <a href="#home" aria-label="logo" class="flex space-x-2 items-center">
+                    <a href="/" wire:navigate aria-label="logo" class="flex space-x-2 items-center">
                         <div aria-hidden="true" class="flex space-x-1">
                             {{-- <div class="h-4 w-4 rounded-full bg-gray-900 dark:bg-white"></div> --}}
                             <img src="/favicon.svg" alt="logo" class="size-6">

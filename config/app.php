@@ -169,6 +169,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\VoltServiceProvider::class,
+
+        MongoDB\Laravel\Auth\PasswordResetServiceProvider::class,
     ])->toArray(),
 
     /*

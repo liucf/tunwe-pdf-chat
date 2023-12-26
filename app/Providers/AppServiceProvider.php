@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\App;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,6 +20,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        $languages = explode(',', $_SERVER['HTTP_ACCEPT_LANGUAGE']);
+        dd($languages);
+        $locale = 'zh_CN';
+        App::setLocale($locale);
     }
 }

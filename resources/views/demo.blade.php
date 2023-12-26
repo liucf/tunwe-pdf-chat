@@ -31,7 +31,7 @@
         </x-slot:style>
 
         <x-slot:scripts>
-            <script src="/js/pdfobject.js"></script>
+          
             <script>
                 PDFObject.embed("/pdf/bitcoin.pdf", "#pdfview");
             </script>
