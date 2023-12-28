@@ -12,10 +12,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('papers', function (Blueprint $table) {
+        Schema::create('documents', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('slug')->unique();
+            $table->string('name');
+            $table->bigInteger('size')->nullable();
+            $table->string('path');
             $table
                 ->foreignIdFor(User::class)
                 ->constrained()
@@ -29,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('papers');
+        Schema::dropIfExists('documents');
     }
 };

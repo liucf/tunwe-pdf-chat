@@ -2,24 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Document;
 use App\Models\Paper;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
-class PaperController extends Controller
+class DocumentController extends Controller
 {
 
     public function index(): View
     {
-        $papers = Paper::all();
-
-        return view('documents', compact('papers'));
+        return view('documents');
     }
+
 
     public function store(): JsonResponse
     {
-        Paper::create([
+        Document::create([
             'title' => 'My Second Document',
             'slug' => 'my-second-document',
             'user_id' => 1,

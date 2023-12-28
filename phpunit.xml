@@ -29,5 +29,7 @@
         <env name="QUEUE_CONNECTION" value="sync"/>
         <env name="SESSION_DRIVER" value="array"/>
         <env name="TELESCOPE_ENABLED" value="false"/>
+        <env name="LOCALIZATION_HIDE_DEFAULT_LOCALE" value="true" />
+        <env name="LOCALIZATION_USE_ACCEPT_HEADER" value="false" />
     </php>
 </phpunit>

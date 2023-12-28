@@ -73,7 +73,7 @@ new #[Layout('layouts.guest')] class extends Component {
                     <div class="w-full border-t border-gray-300"></div>
                 </div>
                 <div class="relative flex justify-center text-sm">
-                    <span class="bg-white px-2 text-gray-500">Or continue with</span>
+                    <span class="bg-white px-2 text-gray-500 dark:bg-gray-800 dark:text-white">Or continue with</span>
                 </div>
             </div>
 

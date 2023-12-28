@@ -41,13 +41,13 @@ new class extends Component {
                 <div class="flex-col z-20 flex-wrap gap-6 p-8 rounded-3xl border border-gray-100 bg-white shadow-2xl shadow-gray-600/10 justify-end w-full invisible opacity-0 translate-y-1  absolute top-full left-0 transition-all duration-300 scale-95 origin-top 
                             lg:relative lg:scale-100 lg:peer-checked:translate-y-0 lg:translate-y-0 lg:flex lg:flex-row lg:items-center lg:gap-0 lg:p-0 lg:bg-transparent lg:w-7/12 lg:visible lg:opacity-100 lg:border-none
                             peer-checked:scale-100 peer-checked:opacity-100 peer-checked:visible lg:shadow-none 
-                            dark:shadow-none dark:bg-gray-800 dark:border-gray-700">
+                            dark:shadow-none  dark:border-gray-700">
 
                     <div class="text-gray-600 dark:text-gray-300 lg:pr-4 lg:w-auto w-full lg:pt-0">
                         <ul class="tracking-wide font-medium lg:text-sm flex-col flex lg:flex-row gap-6 lg:gap-0">
                             <li>
                                 <a href="{{ route('documents') }}" wire:navigate class="block md:px-4 transition hover:text-primary">
-                                    <span>Documents</span>
+                                    <span>{{ __('nav.documents') }}</span>
                                 </a>
                             </li>
                             <li>
@@ -70,7 +70,7 @@ new class extends Component {
                     @guest
                         <div class="mt-12 lg:mt-0">
                             <a href="{{ route('documents') }}" wire:navigate class="relative flex h-9 w-full items-center justify-center px-4 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max">
-                                <span class="relative text-sm font-semibold text-white">Get Started</span>
+                                <span class="relative text-sm font-semibold text-white">{{ __('nav.start') }}</span>
                             </a>
                         </div>
                     @endguest
@@ -138,7 +138,7 @@ new class extends Component {
                 <div class="hidden sm:flex sm:items-center sm:ms-6">
                     <x-dropdown align="right" width="48">
                         <x-slot name="trigger">
-                            <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
+                            <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-900 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
                                 <div x-data="{{ json_encode(['name' => auth()->user()->name]) }}" x-text="name" x-on:profile-updated.window="name = $event.detail.name"></div>
 
                                 <div class="ms-1">

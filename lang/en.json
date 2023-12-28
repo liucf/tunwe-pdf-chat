@@ -235,5 +235,11 @@
     "Yes": "Yes",
     "You are receiving this email because we received a password reset request for your account.": "You are receiving this email because we received a password reset request for your account.",
     "You're logged in!": "You're logged in!",
-    "Your email address is unverified.": "Your email address is unverified."
+    "Your email address is unverified.": "Your email address is unverified.",
+
+    "Documents": "Documents",
+    "No PDF documents": "No PDF documents",
+    "Get started by uploading a new document.": "Get started by uploading a new document.",
+    "Upload": "Upload",
+    "Upload document": "Upload document"
 }

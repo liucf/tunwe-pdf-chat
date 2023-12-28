@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
 use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Support\Facades\Session;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+
 
 Route::middleware('guest')->group(function () {
     Volt::route('register', 'pages.auth.register')
@@ -34,11 +36,11 @@ Route::middleware('auth')->group(function () {
         ->name('password.confirm');
 });
 
-Route::get('/auth/github/redirect', function () {
+Route::get('auth/github/redirect', function () {
     return Socialite::driver('github')->redirect();
 });
 
-Route::get('/auth/github/callback', function () {
+Route::get('auth/github/callback', function () {
     $githubUser = Socialite::driver('github')->user();
 
     $user = User::updateOrCreate([
@@ -57,11 +59,11 @@ Route::get('/auth/github/callback', function () {
 });
 
 
-Route::get('/auth/google/redirect', function () {
+Route::get('auth/google/redirect', function () {
     return Socialite::driver('google')->redirect();
 });
 
-Route::get('/auth/google/callback', function () {
+Route::get('auth/google/callback', function () {
     $googleUser = Socialite::driver('google')->user();
 
     $user = User::updateOrCreate([

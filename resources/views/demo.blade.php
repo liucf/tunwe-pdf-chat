@@ -20,21 +20,10 @@
             </div>
         </div>
 
-        <x-slot:style>
-            <style>
-                .pdfobject-container {
-                    height: calc(100vh - 110px);
-                    width: 50%;
-                    /* border: 1rem solid rgba(0, 0, 0, .1); */
-                }
-            </style>
-        </x-slot:style>
-
-        <x-slot:scripts>
-          
+        @push('scripts')
             <script>
                 PDFObject.embed("/pdf/bitcoin.pdf", "#pdfview");
             </script>
-        </x-slot>
+        @endpush
     </div>
 </x-app-layout>

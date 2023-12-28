@@ -11,17 +11,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-
-    @isset($style)
-        {{ $style }}
-    @endisset
+    <link href="https://unpkg.com/filepond@^4/dist/filepond.css" rel="stylesheet" />
+    @stack('styles')
 </head>
 
 <body class="bg-gray-100 dark:bg-gray-900">
 
     {{-- <x-app-header /> --}}
     <livewire:layout.navigation />
-
 
     <!-- Page Heading -->
     @if (isset($header))
@@ -40,10 +37,17 @@
         <x-app-footer />
     @endif
 
+
     <script src="/js/pdfobject.js"></script>
-    @isset($scripts)
-        {{ $scripts }}
-    @endisset
+    <script src="https://unpkg.com/filepond-plugin-file-validate-type/dist/filepond-plugin-file-validate-type.js"></script>
+    <script src="https://unpkg.com/filepond-plugin-file-validate-size/dist/filepond-plugin-file-validate-size.js"></script>
+    <script src="https://unpkg.com/filepond@^4/dist/filepond.js"></script>
+    <script>
+        FilePond.registerPlugin(FilePondPluginFileValidateType);
+        FilePond.registerPlugin(FilePondPluginFileValidateSize);
+    </script>
+    @stack('scripts')
+
 </body>
 
 </html>

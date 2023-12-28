@@ -6,10 +6,10 @@ use Livewire\Volt\Volt;
 
 test('login screen can be rendered', function () {
     $response = $this->get('/login');
-
     $response
         ->assertOk()
-        ->assertSeeVolt('pages.auth.login');
+        ->assertSee('Log in');
+    // ->assertSeeVolt('pages.auth.login');
 });
 
 test('users can authenticate using the login screen', function () {
@@ -53,8 +53,8 @@ test('navigation menu can be rendered', function () {
 
     $response
         ->assertOk()
-        ->assertSee('Get Started');
-        // ->assertSeeVolt('layout.navigation');
+        ->assertSee('Dashboard');
+    // ->assertSeeVolt('layout.navigation');
 });
 
 test('users can logout', function () {

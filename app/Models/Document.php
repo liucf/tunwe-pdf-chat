@@ -5,14 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use MongoDB\Laravel\Eloquent\Model;
 
-class Paper extends Model
+class Document extends Model
 {
-
-    protected $fillable = [
-        'title',
-        'slug',
-        'user_id',
-    ];
+    protected $guarded = [];
 
     use HasFactory;
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
