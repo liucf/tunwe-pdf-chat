@@ -33,12 +33,16 @@
         {{ $slot }}
     </main>
 
-    @if (!request()->routeIs('demo'))
+    @if (!request()->routeIs('demo') && !request()->routeIs('documents.show'))
         <x-app-footer />
     @endif
 
+    {{-- <script src="https://unpkg.com/pdfjs-dist@4.0.269/build/pdf.mjs" type="module"></script> --}}
+    {{-- <script src="https://unpkg.com/pdfjs-dist@4.0.269/web/pdf_viewer.mjs" type="module"></script> --}}
 
-    <script src="/js/pdfobject.js"></script>
+
+    {{-- <script src="/js/pdfobject.js"></script> --}}
+    {{-- <script src="https://unpkg.com/pdfjs-dist@4.0.269/build/pdf.mjs"></script> --}}
     <script src="https://unpkg.com/filepond-plugin-file-validate-type/dist/filepond-plugin-file-validate-type.js"></script>
     <script src="https://unpkg.com/filepond-plugin-file-validate-size/dist/filepond-plugin-file-validate-size.js"></script>
     <script src="https://unpkg.com/filepond@^4/dist/filepond.js"></script>
@@ -46,6 +50,8 @@
         FilePond.registerPlugin(FilePondPluginFileValidateType);
         FilePond.registerPlugin(FilePondPluginFileValidateSize);
     </script>
+
+  
     @stack('scripts')
 
 </body>

@@ -15,7 +15,8 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 |
 */
 
-uses(TestCase::class, DatabaseMigrations::class)->in('Feature');
+uses(TestCase::class, RefreshDatabase::class)->in('Feature');
+// uses(TestCase::class, DatabaseMigrations::class)->in('Feature');
 // uses(TestCase::class)->in('Feature');
 
 /*

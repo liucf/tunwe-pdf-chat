@@ -6,6 +6,8 @@ use Illuminate\Validation\Rules\Password;
 use Illuminate\Validation\ValidationException;
 use Livewire\Volt\Component;
 use Livewire\WithFileUploads;
+use Illuminate\Support\Facades\Session;
+use App\Events\DocumentCreated;
 
 new class extends Component {
     use WithFileUploads;
@@ -20,24 +22,26 @@ new class extends Component {
 
         $user = Auth::user();
 
-        $user->documents()->create([
+        $document = $user->documents()->create([
             'name' => $validated['uploadedFile']->getClientOriginalName(),
-            'path' => $validated['uploadedFile']->storeAs('documents', $validated['uploadedFile']->hashName()),
+            'path' => $validated['uploadedFile']->storeAs('documents', $validated['uploadedFile']->hashName(), 'public'),
             'size' => $validated['uploadedFile']->getSize(),
         ]);
 
-        Session::flash('status', 'verification-link-sent');
-        // return redirect()->to('/documents');
+        event(new DocumentCreated(($document)));
 
+        Session::flash('status', 'Successfully uploaded');
         $this->dispatch('fileuploaded');
-        $this->dispatch('fileuploadedlist');
+        return redirect()->to('/documents');
+       
+        // $this->dispatch('fileuploadedlist');
     }
 }; ?>
 
 
 <div>
     <template x-teleport="body">
-        <div x-show="modalOpen" x-on:fileuploadedlist.window="pond.removeFiles()" class="fixed top-0 left-0 z-[99] flex items-center justify-center w-screen h-screen" x-cloak x-data x-init="$nextTick(() => {
+        <div x-show="modalOpen" x-on:fileuploaded.window="pond.removeFiles()" class="fixed top-0 left-0 z-[99] flex items-center justify-center w-screen h-screen" x-cloak x-data x-init="
             pond = FilePond.create($refs.input, {
                 acceptedFileTypes: ['application/pdf'],
                 maxFileSize: '10MB',
@@ -51,8 +55,7 @@ new class extends Component {
                         @this.removeUpload('uploadedFile', filename, load)
                     },
                 }
-            });
-        })">
+            })">
 
             <div x-show="modalOpen" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="ease-in duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" @click="modalOpen=false" class="absolute inset-0 w-full h-full bg-white backdrop-blur-sm bg-opacity-70"></div>
             <div x-show="modalOpen" x-trap.inert.noscroll="modalOpen" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2 sm:scale-95" x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100" x-transition:leave="ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100" x-transition:leave-end="opacity-0 -translate-y-2 sm:scale-95" class="relative w-full py-6 bg-white border shadow-lg px-7 border-neutral-200 sm:max-w-lg sm:rounded-lg">

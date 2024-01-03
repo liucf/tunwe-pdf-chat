@@ -50,6 +50,7 @@
     "Details": "Details",
     "Disable": "Disable",
     "Discard": "Discard",
+    "Documents": "Documents",
     "Done": "Done",
     "Down": "Down",
     "Duplicate": "Duplicate",
@@ -73,6 +74,7 @@
     "Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.": "Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.",
     "Found": "Found",
     "Gateway Timeout": "Gateway Timeout",
+    "Get started by uploading a new document.": "Get started by uploading a new document.",
     "Go Home": "Go Home",
     "Go to page :page": "Go to page :page",
     "Gone": "Gone",
@@ -121,6 +123,7 @@
     "New Password": "New Password",
     "No": "No",
     "No Content": "No Content",
+    "No PDF documents": "No PDF documents",
     "Non-Authoritative Information": "Non-Authoritative Information",
     "Not Acceptable": "Not Acceptable",
     "Not Extended": "Not Extended",
@@ -223,6 +226,8 @@
     "Update Password": "Update Password",
     "Update your account's profile information and email address.": "Update your account's profile information and email address.",
     "Upgrade Required": "Upgrade Required",
+    "Upload": "Upload",
+    "Upload document": "Upload document",
     "URI Too Long": "URI Too Long",
     "Use Proxy": "Use Proxy",
     "User": "User",
@@ -235,11 +240,5 @@
     "Yes": "Yes",
     "You are receiving this email because we received a password reset request for your account.": "You are receiving this email because we received a password reset request for your account.",
     "You're logged in!": "You're logged in!",
-    "Your email address is unverified.": "Your email address is unverified.",
-
-    "Documents": "Documents",
-    "No PDF documents": "No PDF documents",
-    "Get started by uploading a new document.": "Get started by uploading a new document.",
-    "Upload": "Upload",
-    "Upload document": "Upload document"
+    "Your email address is unverified.": "Your email address is unverified."
 }

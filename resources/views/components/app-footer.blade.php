@@ -1,16 +1,16 @@
-<footer class="py-20 md:py-40"">
+<footer class="py-2">
     <div class="mx-auto max-w-7xl overflow-hidden py-20 px-6 sm:py-24 lg:px-8">
         <nav class="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12" aria-label="Footer">
             <div class="pb-6">
-                <a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Home</a>
+                <a href="/" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Home</a>
             </div>
 
             <div class="pb-6">
-                <a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Docuemnts</a>
+                <a  href="{{ route('documents') }}" wire:navigate class="text-sm leading-6 text-gray-600 hover:text-gray-900">Docuemnts</a>
             </div>
 
             <div class="pb-6">
-                <a href="#" class="text-sm leading-6 text-gray-600 hover:text-gray-900">Price</a>
+                <a  href="{{ route('price') }}" wire:navigate class="text-sm leading-6 text-gray-600 hover:text-gray-900">Pricing</a>
             </div>
 
             <div class="pb-6">

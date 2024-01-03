@@ -14,6 +14,7 @@ return new class extends Migration
     {
         Schema::create('documents', function (Blueprint $table) {
             $table->id();
+            $table->uuid('uuid');
             $table->string('name');
             $table->bigInteger('size')->nullable();
             $table->string('path');
@@ -21,6 +22,9 @@ return new class extends Migration
                 ->foreignIdFor(User::class)
                 ->constrained()
                 ->cascadeOnDelete();
+            $table->integer('page_count')->default(0);
+            $table->integer('chunk_count')->default(0);
+            $table->boolean('embedded')->default(false);
             $table->timestamps();
         });
     }

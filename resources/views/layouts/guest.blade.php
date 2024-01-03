@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Fonts -->
@@ -27,6 +27,17 @@
         {{ $slot }}
 
     </div>
+
+    <script src="https://unpkg.com/filepond-plugin-file-validate-type/dist/filepond-plugin-file-validate-type.js"></script>
+    <script src="https://unpkg.com/filepond-plugin-file-validate-size/dist/filepond-plugin-file-validate-size.js"></script>
+    <script src="https://unpkg.com/filepond@^4/dist/filepond.js"></script>
+    <script>
+        FilePond.registerPlugin(FilePondPluginFileValidateType);
+        FilePond.registerPlugin(FilePondPluginFileValidateSize);
+    </script>
+
+  
+    @stack('scripts')
 </body>
 
 </html>

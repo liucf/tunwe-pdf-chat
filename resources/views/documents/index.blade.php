@@ -5,6 +5,6 @@
         </h2>
     </x-slot>
 
-    <livewire:documents />
+    <livewire:pages.documents.index />
 
 </x-app-layout>
