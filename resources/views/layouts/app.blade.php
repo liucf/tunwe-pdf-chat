@@ -50,8 +50,9 @@
         FilePond.registerPlugin(FilePondPluginFileValidateType);
         FilePond.registerPlugin(FilePondPluginFileValidateSize);
     </script>
+    <script src="https://js.stripe.com/v3/"></script>
 
-  
+
     @stack('scripts')
 
 </body>
