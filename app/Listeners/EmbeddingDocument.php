@@ -9,6 +9,7 @@ use Symfony\Component\Process\Process;
 use Spatie\PdfToText\Pdf;
 use OpenAI\Laravel\Facades\OpenAI;
 // use Illuminate\Support\Facades\Process;
+use DateTime;
 
 class EmbeddingDocument implements ShouldQueue
 {
@@ -38,7 +39,7 @@ class EmbeddingDocument implements ShouldQueue
         $process->run();
 
         $nodejsoutput = $process->getOutput();
-        logger()->info($nodejsoutput);
+        // logger()->info($nodejsoutput);
         $pages = json_decode($nodejsoutput, true)['pages'];
         $chunks = json_decode($nodejsoutput, true)['chunks'];
 
@@ -111,4 +112,9 @@ class EmbeddingDocument implements ShouldQueue
         //     'embedded' => true,
         // ]);
     }
+
+    // public function retryUntil(): DateTime
+    // {
+    //     return now()->addMinutes(10);
+    // }
 }

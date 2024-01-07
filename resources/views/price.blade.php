@@ -1,7 +1,16 @@
 <x-app-layout>
     <div class="mx-auto max-w-7xl py-24 px-6 lg:px-8">
+
+        @if (session('status'))
+            <div class="mb-10">
+                <x-document-message-alert>
+                    {{ __(session('status')) }}
+                </x-document-message-alert>
+            </div>
+        @endif
+
         <h2 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none lg:text-5xl text-center">Pricing plans</h2>
-        {{-- <p class="mt-6 max-w-2xl text-xl text-gray-500">Choose an affordable plan that's packed with the best features for engaging your audience, creating customer loyalty, and driving sales.</p> --}}
+
 
         <!-- Tiers -->
         <div class="mt-24 space-y-12 lg:grid lg:grid-cols-3 lg:gap-x-8 lg:space-y-0">

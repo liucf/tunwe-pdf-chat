@@ -32,7 +32,7 @@ class Documents extends Component
     {
         $document = Document::findOrFail($id);
 
-        Storage::disk('public')->delete($document->path);
+        // Storage::disk('public')->delete($document->path);
         $document->delete();
 
         Session::flash('status', 'Successfully deleted');

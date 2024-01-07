@@ -11,10 +11,15 @@ class QueryEmbedding
 
     public function getQueryEmbedding($question): array
     {
-        $result = OpenAI::embeddings()->create([
-            'model' => 'text-embedding-ada-002',
-            'input' => $question,
-        ]);
+        try {
+            $result = OpenAI::embeddings()->create([
+                'model' => 'text-embedding-ada-002',
+                'input' => $question,
+            ]);
+        } catch (Exception $e) {
+            Log::error($e->getMessage());
+            throw new Exception("Failed to generated query embedding!");
+        }
 
         if (count($result['data']) == 0) {
             throw new Exception("Failed to generated query embedding!");
@@ -37,10 +42,15 @@ class QueryEmbedding
             'content' => $system_prompt
         ];
         // logger()->info($messages);
-        return Openai::chat()->createStreamed([
-            'model' => 'gpt-3.5-turbo-1106',
-            'temperature' => 0.1,
-            'messages' => $messages,
-        ]);
+        try {
+            return Openai::chat()->createStreamed([
+                'model' => 'gpt-3.5-turbo-1106',
+                'temperature' => 0.2,
+                'messages' => $messages,
+            ]);
+        } catch (Exception $e) {
+            Log::error($e->getMessage());
+            throw new Exception("Failed to generate answer!");
+        }
     }
 }

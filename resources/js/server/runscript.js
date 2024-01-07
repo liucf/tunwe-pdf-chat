@@ -8,6 +8,7 @@ const DEFAULT_URL = process.argv[2];
 
 const loadingTask = PDFJS.getDocument({
     url: DEFAULT_URL,
+    verbosity: 0
 });
 const pdfDocument = await loadingTask.promise;
 let pages = pdfDocument.numPages;
@@ -59,30 +60,3 @@ let returnJson = {
     "chunks": allchunks
 };
 console.log(JSON.stringify(returnJson));
-
-// pdfDocument.getPage(j).then(page => {
-//     console.log('page', page);
-//     page.getTextContent().then(content => {
-//         console.log('content', content);
-//         var currentChunk = '';
-//         for (let i = 0; i < content.items.length; i++) {
-//             let item = content.items[i];
-//             currentChunk += item.str;
-//             if (currentChunk.length > 1800 && item.str.slice(-1) == '.') {
-//                 chunks.push(currentChunk);
-//                 currentChunk = '';
-//             }
-//         }
-//         chunks.push(currentChunk);
-//         // console.log('page', j);
-//         // console.log('chunks', chunks);
-//     }).catch(contentErr => {
-//         console.log('error', contentErr);
-//     });
-
-
-// }).catch(pageErr => {
-//     console.log('error', pageErr);
-// });
-// allchunks.push(chunks);
-// }

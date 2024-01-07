@@ -103,7 +103,7 @@
                 await scrollDown();
 
                 interval = setInterval(() => {
-                    console.log('scrolling');
+                    // console.log('scrolling');
                     var element = document.getElementById("end-of-chat");
                     element.scrollIntoView({behavior: "smooth"}); 
                 }, 500);
@@ -111,7 +111,7 @@
             });
 
             window.addEventListener('endScrollDown', async function(e) {
-                console.log('endScrollDown');
+                // console.log('endScrollDown');
                 clearInterval(interval);
                 await scrollDown();
             });

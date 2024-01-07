@@ -47,7 +47,7 @@ new class extends Component {
                 </div>
             @else
                 @if (auth()->user()->subscription('default')->onGracePeriod())
-                    <div class="my-4 space-y-2">
+                    <div class="my-4 space-y-4">
                         <div>{{ __('Your subscription of :plan plan has been cancelled.', ['plan' => '$9 monthly']) }}</div>
                         <div>
                             You can use the services until to {{ date('Y-m-d',Auth::user()->subscription('default')->asStripeSubscription()->current_period_end) }}.

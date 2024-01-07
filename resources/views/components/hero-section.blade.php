@@ -36,7 +36,7 @@
                     </div>
                 </div>
             </div>
-            <div class="mt-12 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6">
+            {{-- <div class="mt-12 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6">
                 <div class="p-4 grayscale transition duration-200 hover:grayscale-0">
                     <img src="./images/clients/microsoft.svg" class="h-12 w-auto mx-auto" loading="lazy" alt="client logo" width="" height="" />
                 </div>
@@ -55,7 +55,7 @@
                 <div class="p-4 grayscale transition duration-200 hover:grayscale-0">
                     <img src="./images/clients/google-cloud.svg" class="h-12 w-auto mx-auto" loading="lazy" alt="client logo" width="" height="" />
                 </div>
-            </div>
+            </div> --}}
         </div>
     </x-container>
 </div>
