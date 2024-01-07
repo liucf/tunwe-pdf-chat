@@ -35,27 +35,27 @@
                     top: 0
                 }
             </style>
-            <link rel="stylesheet" href="https://unpkg.com/pdfjs-dist@4.0.269/web/pdf_viewer.css">
+            <link rel="stylesheet" href="/js/pdfjs/web/pdf_viewer.css">
         @endpush
 
         @push('scripts')
-            <script src="https://unpkg.com/pdfjs-dist@4.0.269/build/pdf.mjs" type="module"></script>
-            <script src="https://unpkg.com/pdfjs-dist@4.0.269/web/pdf_viewer.mjs" type="module"></script>
+            <script src="/js/pdfjs/build/pdf.mjs" type="module"></script>
+            <script src="/js/pdfjs/web/pdf_viewer.mjs" type="module"></script>
             <script type="module">
                 var {
                     pdfjsLib
                 } = globalThis;
                 // console.log(pdfjsLib);
 
-                pdfjsLib.GlobalWorkerOptions.workerSrc = "https://unpkg.com/pdfjs-dist@4.0.269/build/pdf.worker.mjs";
+                pdfjsLib.GlobalWorkerOptions.workerSrc = "/js/pdfjs/build/pdf.worker.mjs";
 
                 // Some PDFs need external cmaps.
-                const CMAP_URL = "https://unpkg.com/browse/pdfjs-dist@4.0.269/cmaps/";
+                const CMAP_URL = "/js/pdfjs/web/cmaps/";
                 const CMAP_PACKED = true;
                 const ENABLE_XFA = true;
 
                 const SANDBOX_BUNDLE_SRC = new URL(
-                    "https://unpkg.com/pdfjs-dist@4.0.269/build/pdf.sandbox.mjs",
+                    "/js/pdfjs/build/pdf.sandbox.mjs",
                     window.location
                 );
 
