@@ -107,7 +107,7 @@
                 window.eventBus = eventBus;
 
                 const DEFAULT_URL = "{{ $pdfurl }}";
-
+                console.log(DEFAULT_URL);
                 // Loading document.
                 const loadingTask = pdfjsLib.getDocument({
                     url: DEFAULT_URL,
