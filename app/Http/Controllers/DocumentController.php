@@ -33,7 +33,7 @@ class DocumentController extends Controller
 
     public function show(Document $document)
     {
-        $pdfurl = asset($document->path);
+        $pdfurl = asset('storage/' . $document->path);
         return view('documents.show')->with(compact('document', 'pdfurl'));
     }
 

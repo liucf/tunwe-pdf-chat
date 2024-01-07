@@ -4,7 +4,8 @@
         ->get()
         ->first();
     $pdffile = storage_path('app/' . $document->path);
-    $pdfurl = asset($document->path);
+    // dd($pdffile);
+    $pdfurl = asset('storage/' . $document->path);
     // dd($pdffile, $pdfurl);
     ?>
     <div id="demo" class="px-4 mt-10">
