@@ -12,7 +12,8 @@ Route::group([
     Route::view('/', 'home')->name('home');
     Route::view('demo', 'demo', ['withoutfooter' => true])->name('demo');
     Route::view('pirce', 'price')->name('price');
-    Route::view('testpdf', 'testpdf', ['withoutfooter' => true])->name('testpdf');
+    Route::view('privacy', 'privacy')->name('privacy');
+    // Route::view('testpdf', 'testpdf', ['withoutfooter' => true])->name('testpdf');
 
     Route::get('testDocument', [DocumentController::class, 'test'])->name('documents.test');
 
