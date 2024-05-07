@@ -121,9 +121,9 @@ class ChatwindowDemo extends Component
             ->get();
         // only get distance <0.2
         $result = $result->filter(function ($item) {
-            return $item->distance < 0.2;
+            return $item->distance < 0.3;
         })->values();
-        // logger($result);
+        logger($result);
         $chunkData = [];
         $chunkDataIndex = 0;
         $context = collect($result)->map(function ($item) use (&$chunkData, &$chunkDataIndex) {

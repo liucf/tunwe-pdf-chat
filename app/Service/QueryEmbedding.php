@@ -45,7 +45,7 @@ class QueryEmbedding
         try {
             return Openai::chat()->createStreamed([
                 'model' => 'gpt-3.5-turbo-1106',
-                'temperature' => 0.2,
+                'temperature' => 0.4,
                 'messages' => $messages,
             ]);
         } catch (Exception $e) {
